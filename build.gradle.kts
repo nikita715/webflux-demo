@@ -5,7 +5,6 @@ plugins {
     id("io.spring.dependency-management") version "1.0.14.RELEASE"
     kotlin("jvm") version "1.6.21"
     kotlin("plugin.spring") version "1.6.21"
-    application
 }
 
 group = "com.example"
@@ -27,8 +26,11 @@ dependencies {
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
-    implementation("com.oracle.database.r2dbc:oracle-r2dbc:1.0.0")
-    runtimeOnly("com.oracle.database.jdbc:ojdbc11")
+//    implementation("com.oracle.database.r2dbc:oracle-r2dbc:1.0.0")
+//    runtimeOnly("com.oracle.database.jdbc:ojdbc11")
+
+    runtimeOnly("com.h2database:h2")
+    runtimeOnly("io.r2dbc:r2dbc-h2")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
